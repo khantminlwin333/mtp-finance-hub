@@ -1,34 +1,41 @@
-import { Link2, BarChart3, Brain, Sparkles } from "lucide-react";
+import { LogIn, Wallet, Target, FileText, Cloud } from "lucide-react";
 
 const HowItWorksSection = () => {
   const steps = [
     {
       number: "01",
-      icon: Link2,
-      title: "Connect Your Accounts",
+      icon: LogIn,
+      title: "Sign In Securely with Google",
       description:
-        "Securely link your bank accounts, credit cards, and investments in just a few clicks. We support thousands of financial institutions.",
+        "Get started in seconds with secure Google authentication. No passwords to remember, just one-click access to your financial hub.",
     },
     {
       number: "02",
-      icon: BarChart3,
-      title: "Track Your Finances",
+      icon: Wallet,
+      title: "Track Income & Expenses",
       description:
-        "Watch as your transactions are automatically categorized and organized. Get a complete picture of your money in real-time.",
+        "Log your transactions with detailed tables. Categorize spending, monitor cash flow, and see exactly where your money goes.",
     },
     {
       number: "03",
-      icon: Brain,
-      title: "Analyze Your Insights",
+      icon: Target,
+      title: "Manage Budgets & Goals",
       description:
-        "Discover spending patterns, identify savings opportunities, and understand where your money goes with intelligent analytics.",
+        "Set budgets for different categories, track savings goals, and stay on top of your financial targets with visual progress indicators.",
     },
     {
       number: "04",
-      icon: Sparkles,
-      title: "Improve Financial Health",
+      icon: FileText,
+      title: "Generate Invoices & Reports",
       description:
-        "Take action on personalized recommendations to reach your goals faster and build lasting financial wellness.",
+        "Create professional invoices for your business and export detailed financial reports as PDFs for easy record-keeping.",
+    },
+    {
+      number: "05",
+      icon: Cloud,
+      title: "Sync & Access Anywhere",
+      description:
+        "Your data is securely stored in the cloud. Access your finances from any device, anytime, with real-time synchronization.",
     },
   ];
 

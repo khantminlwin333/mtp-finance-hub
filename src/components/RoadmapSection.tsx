@@ -1,30 +1,36 @@
-import { Brain, BarChart3, Smartphone, Plug, Rocket } from "lucide-react";
+import { Brain, ScanLine, Bitcoin, TrendingUp, DollarSign, Rocket } from "lucide-react";
 
 const RoadmapSection = () => {
   const roadmapItems = [
     {
       icon: Brain,
-      title: "AI-Powered Insights",
-      description: "Smart recommendations and predictions powered by machine learning.",
+      title: "AI-Powered Invoice Generation",
+      description: "Automatically generate professional invoices with smart data extraction and formatting.",
       status: "Coming Q2",
     },
     {
-      icon: BarChart3,
-      title: "Advanced Analytics",
-      description: "Deep-dive reports, custom metrics, and exportable financial statements.",
+      icon: ScanLine,
+      title: "AI Image Scanning",
+      description: "Enhanced receipt and document scanning with intelligent data extraction and categorization.",
       status: "Coming Q2",
     },
     {
-      icon: Smartphone,
-      title: "Multi-Device Sync",
-      description: "Access your finances anywhere with seamless sync across all devices.",
+      icon: Bitcoin,
+      title: "Cryptocurrency Tracking",
+      description: "Monitor your crypto portfolio alongside traditional finances. Track holdings across major exchanges.",
       status: "Coming Q3",
     },
     {
-      icon: Plug,
-      title: "More Integrations",
-      description: "Connect with more banks, investment platforms, and financial tools.",
-      status: "Ongoing",
+      icon: TrendingUp,
+      title: "Stock Market Tracking",
+      description: "Track investments and get real-time stock market data integrated into your financial dashboard.",
+      status: "Coming Q3",
+    },
+    {
+      icon: DollarSign,
+      title: "Currency Exchange Rates",
+      description: "Live currency exchange rate listings for international transactions and multi-currency tracking.",
+      status: "Coming Q4",
     },
   ];
 
@@ -44,7 +50,7 @@ const RoadmapSection = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {roadmapItems.map((item, index) => (
             <div
               key={item.title}
