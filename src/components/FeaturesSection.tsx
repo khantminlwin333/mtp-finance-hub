@@ -1,42 +1,54 @@
-import { Wallet, TrendingUp, PieChart, Lock, LayoutDashboard, Bell } from "lucide-react";
+import { Wallet, TrendingUp, PiggyBank, FileText, Bell, Download, ScanLine, Cloud } from "lucide-react";
 
 const FeaturesSection = () => {
   const features = [
     {
       icon: Wallet,
-      title: "Expense Tracking",
+      title: "Income & Expense Tracking",
       description:
-        "Automatically categorize and track every transaction. See exactly where your money goes with detailed breakdowns.",
+        "Track every transaction with detailed tables. Categorize income and expenses for complete visibility into your cash flow.",
     },
     {
       icon: TrendingUp,
-      title: "Income Management",
+      title: "Budget Management",
       description:
-        "Monitor all income sources in one place. Track salary, investments, side hustles, and more with ease.",
+        "Create and manage budgets for different categories. Get alerts when you're approaching limits and stay on track.",
     },
     {
-      icon: PieChart,
-      title: "Smart Reports",
+      icon: PiggyBank,
+      title: "Savings & Financial Goals",
       description:
-        "Get actionable insights with beautiful charts and reports. Understand your financial health at a glance.",
+        "Set savings targets and track progress towards your financial goals with visual indicators and milestones.",
     },
     {
-      icon: Lock,
-      title: "Secure Storage",
+      icon: FileText,
+      title: "Invoice Creation & Management",
       description:
-        "Your data is protected with bank-level encryption. We never sell or share your personal information.",
-    },
-    {
-      icon: LayoutDashboard,
-      title: "Clean Dashboard",
-      description:
-        "A beautifully designed interface that makes managing money a pleasure, not a chore.",
+        "Generate professional invoices for your business. Manage clients, track payments, and keep everything organized.",
     },
     {
       icon: Bell,
-      title: "Smart Alerts",
+      title: "Smart Notifications",
       description:
-        "Stay on top of your finances with customizable notifications for bills, unusual spending, and goals.",
+        "Stay on top of your finances with customizable reminders for bills, budget limits, and important financial events.",
+    },
+    {
+      icon: Download,
+      title: "Export Reports as PDF",
+      description:
+        "Download detailed financial reports and invoices as PDF files for easy sharing, printing, and record-keeping.",
+    },
+    {
+      icon: ScanLine,
+      title: "Receipt Scanning",
+      description:
+        "Scan receipts and documents using Google Vision API. Extract data automatically and keep digital records organized.",
+    },
+    {
+      icon: Cloud,
+      title: "Secure Cloud Sync",
+      description:
+        "Your data is encrypted and synced securely to the cloud. Access your finances from any device with Google Sign-In.",
     },
   ];
 
@@ -48,23 +60,23 @@ const FeaturesSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <span className="inline-block text-accent font-medium text-sm mb-4 tracking-wide uppercase">
-            Features
+            Core Features
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
             Everything You Need to{" "}
-            <span className="text-gradient">Succeed Financially</span>
+            <span className="text-gradient">Manage Your Money</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Powerful features designed to give you complete control and clarity over your money.
+            Powerful features designed for individuals and small businesses seeking complete financial control.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={feature.title}
               className="group animate-fade-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
               <div className="h-full bg-card rounded-2xl p-6 border border-border shadow-soft hover:shadow-elevated hover:border-accent/30 transition-all duration-300 hover:-translate-y-1">
                 <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:shadow-glow transition-all duration-300">

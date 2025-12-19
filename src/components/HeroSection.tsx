@@ -19,19 +19,18 @@ const HeroSection = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-fade-up" style={{ animationDelay: "0.1s" }}>
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-sm text-primary-foreground/80">Now in Beta — Join the Waitlist</span>
+            <span className="text-sm text-primary-foreground/80">Simple • Automated • Secure</span>
           </div>
 
           {/* Headline */}
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground mb-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Take Control of Your{" "}
-            <span className="text-gradient">Financial Future</span>
+            All-in-One{" "}
+            <span className="text-gradient">Financial Control</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-primary-foreground/70 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            MTP simplifies your finances with smart tracking, real-time insights, and bank-grade security. 
-            Make informed decisions and build lasting wealth.
+            Track income and expenses, manage budgets, create invoices, and generate reports — all in one secure platform with Google Sign-In and cloud sync.
           </p>
 
           {/* CTA Buttons */}
