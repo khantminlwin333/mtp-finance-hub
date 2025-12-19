@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Space Grotesk", "Inter", "system-ui", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,33 +61,67 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        teal: {
+          50: "hsl(166 76% 97%)",
+          100: "hsl(167 85% 89%)",
+          200: "hsl(168 84% 78%)",
+          300: "hsl(170 76% 64%)",
+          400: "hsl(172 66% 50%)",
+          500: "hsl(173 80% 40%)",
+          600: "hsl(175 84% 32%)",
+          700: "hsl(175 77% 26%)",
+          800: "hsl(176 69% 22%)",
+          900: "hsl(176 61% 19%)",
+        },
+        navy: {
+          50: "hsl(214 62% 95%)",
+          100: "hsl(214 60% 90%)",
+          200: "hsl(215 48% 80%)",
+          300: "hsl(217 45% 65%)",
+          400: "hsl(219 42% 50%)",
+          500: "hsl(221 44% 41%)",
+          600: "hsl(222 47% 31%)",
+          700: "hsl(222 47% 21%)",
+          800: "hsl(222 47% 14%)",
+          900: "hsl(222 47% 11%)",
+          950: "hsl(222 47% 6%)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "calc(var(--radius) + 4px)",
+        "2xl": "calc(var(--radius) + 8px)",
+      },
+      boxShadow: {
+        glow: "var(--shadow-glow)",
+        soft: "var(--shadow-md)",
+        elevated: "var(--shadow-xl)",
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        pulse: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        shimmer: "shimmer 2s linear infinite",
+        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },
