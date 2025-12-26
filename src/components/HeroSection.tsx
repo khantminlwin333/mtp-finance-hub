@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Apple, Smartphone } from "lucide-react";
-import PlayStoreIcon from '../assets/apps.png';
+import PlayStoreIcon from "../assets/apps.png";
 
 const HeroSection = () => {
   const appStores = [
@@ -10,7 +10,7 @@ const HeroSection = () => {
       url: "https://apps.apple.com/app/mtp-finance-hub/idYOUR_APP_ID",
       description: "Download on the",
       platform: "iOS",
-      disabled: true
+      disabled: true,
     },
     {
       name: "Google Play",
@@ -18,8 +18,8 @@ const HeroSection = () => {
       url: "https://play.google.com/store/apps/details?id=com.khantminlwin.MTP",
       description: "Get it on",
       platform: "Android",
-      disabled: false
-    }
+      disabled: false,
+    },
   ];
 
   // Fixed YouTube Shorts embed URL
@@ -39,7 +39,7 @@ const HeroSection = () => {
             frameBorder="0"
           ></iframe>
         </div>
-        
+
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8 animate-fade-in animation-delay-1200">
           {appStores.map((store, index) => (
             <Button
