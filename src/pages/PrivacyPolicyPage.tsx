@@ -180,8 +180,8 @@ const PrivacyPolicyPage = () => {
       icon: <Mail className="w-5 h-5" />,
       content: "If you have questions about this Privacy Policy or our data practices, please contact us at:",
       contact: {
-        email: "privacy@mtpfinancehub.com",
-        address: "Your Company Address Here",
+        email: "servicemtp67@gmail.com",
+        address: "Online Company",
         responseTime: "We aim to respond within 48 hours"
       }
     }

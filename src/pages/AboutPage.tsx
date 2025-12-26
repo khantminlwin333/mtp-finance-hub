@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import FadingAnimation from "@/components/FadingAnimation";
+
+import AndroidIcon from "@/assets/android.png";
 import { 
   Brain, 
   TrendingUp, 
@@ -52,14 +54,16 @@ const AboutPage = () => {
       icon: "apple",
       url: "https://apps.apple.com/app/mtp-finance-hub/idYOUR_APP_ID",
       description: "Download on the",
-      platform: "iOS"
+      platform: "iOS",
+      disabled: true // Add this property
     },
     {
       name: "Google Play",
       icon: "google",
-      url: "https://play.google.com/store/apps/details?id=com.mtp.financehub",
+      url: "https://play.google.com/store/apps/details?id=com.khantminlwin.MTP",
       description: "Get it on",
-      platform: "Android"
+      platform: "Android",
+      disabled: false
     }
   ];
 
@@ -212,43 +216,63 @@ const AboutPage = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {appStores.map((store, index) => (
-              <div 
-                key={index} 
-                className="group relative p-8 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-              >
-                <div className="flex flex-col items-center text-center">
-                  <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 mb-6">
-                    {store.icon === "apple" ? (
-                      <svg className="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14.94 5.19A4.38 4.38 0 0 0 16 2a4.44 4.44 0 0 0-3 1.52 4.17 4.17 0 0 0-1 3.09 3.69 3.69 0 0 0 2.94-1.42zm2.52 7.44a4.51 4.51 0 0 1 2.16-3.81 4.66 4.66 0 0 0-3.66-2c-1.56-.16-3 .91-3.83.91s-2-.89-3.3-.87a4.92 4.92 0 0 0-4.14 2.53C2.93 12.45 4.24 17 6 19.47c.8 1.21 1.8 2.58 3.12 2.53s1.75-.76 3.28-.76 2 .76 3.3.73 2.22-1.24 3.06-2.45a11 11 0 0 0 1.38-2.85 4.41 4.41 0 0 1-2.68-4.04z"/>
-                      </svg>
-                    ) : (
-                      <svg className="w-12 h-12 text-primary" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3 20.5v-17c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v17c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1zm5-2h10v-1H8v1zm0-4h10v-1H8v1zm0-4h10v-1H8v1z"/>
-                      </svg>
-                    )}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">{store.name}</h3>
-                  <p className="text-muted-foreground mb-6">{store.description}</p>
-                  <Button 
-                    size="lg" 
-                    className="w-full gap-2"
-                    asChild
-                  >
-                    <a 
-                      href={store.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <Download className="w-5 h-5" />
-                      Download for {store.platform}
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
+  {appStores.map((store, index) => (
+    <div 
+      key={index} 
+      className="group relative p-8 rounded-2xl border backdrop-blur-sm transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+    >
+      <div className="flex flex-col items-center text-center">
+        <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 mb-6">
+          {store.icon === "apple" ? (
+            <svg className="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.94 5.19A4.38 4.38 0 0 0 16 2a4.44 4.44 0 0 0-3 1.52 4.17 4.17 0 0 0-1 3.09 3.69 3.69 0 0 0 2.94-1.42zm2.52 7.44a4.51 4.51 0 0 1 2.16-3.81 4.66 4.66 0 0 0-3.66-2c-1.56-.16-3 .91-3.83.91s-2-.89-3.3-.87a4.92 4.92 0 0 0-4.14 2.53C2.93 12.45 4.24 17 6 19.47c.8 1.21 1.8 2.58 3.12 2.53s1.75-.76 3.28-.76 2 .76 3.3.73 2.22-1.24 3.06-2.45a11 11 0 0 0 1.38-2.85a4.41 4.41 0 0 1-2.68-4.04z"/>
+            </svg>
+          ) : (
+            <img 
+        src={AndroidIcon} 
+        alt="Get it on Google Play"
+        className="h-12 w-auto"
+      />
+          )}
+        </div>
+        <h3 className="text-2xl font-bold mb-2">{store.name}</h3>
+        <p className="text-muted-foreground mb-6">
+          {store.disabled ? "Coming Soon" : store.description}
+        </p>
+        
+        {store.disabled ? (
+          // Disabled Apple Button
+          <Button 
+            size="lg" 
+            className="w-full gap-2"
+            disabled
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.94 5.19A4.38 4.38 0 0 0 16 2a4.44 4.44 0 0 0-3 1.52 4.17 4.17 0 0 0-1 3.09 3.69 3.69 0 0 0 2.94-1.42zm2.52 7.44a4.51 4.51 0 0 1 2.16-3.81 4.66 4.66 0 0 0-3.66-2c-1.56-.16-3 .91-3.83.91s-2-.89-3.3-.87a4.92 4.92 0 0 0-4.14 2.53C2.93 12.45 4.24 17 6 19.47c.8 1.21 1.8 2.58 3.12 2.53s1.75-.76 3.28-.76 2 .76 3.3.73 2.22-1.24 3.06-2.45a11 11 0 0 0 1.38-2.85a4.41 4.41 0 0 1-2.68-4.04z"/>
+            </svg>
+            We are currently working!
+          </Button>
+        ) : (
+          // Enabled Google Play Button
+          <Button 
+            size="lg" 
+            className="w-full gap-2"
+            asChild
+          >
+            <a 
+              href={store.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Download className="w-5 h-5" />
+              Download for {store.platform}
+            </a>
+          </Button>
+        )}
+      </div>
+    </div>
+  ))}
+</div>
           
           {/* Plan Comparison */}
           <div className="mt-20 max-w-4xl mx-auto">

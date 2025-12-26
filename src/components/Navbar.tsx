@@ -24,7 +24,7 @@ const Navbar = () => {
 
   // Function to open email client
   const handleContactClick = () => {
-    const email = "contact@mtpfinancehub.com";
+    const email = "servicemtp67@gmail.com";
     const subject = "Contact Inquiry - MTP Finance Hub";
     const body = "Hello MTP Finance Hub team,\n\nI would like to get in touch regarding:";
     
@@ -47,11 +47,11 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center shadow-glow">
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-glow">
             <img 
               src={mtpLogo}
               alt="MTP Logo" 
-              className="w-6 h-6"
+              className="w-10 h-10"
             />
           </div>
           <span className="font-display font-bold text-xl text-foreground">MTP</span>

@@ -8,10 +8,10 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} Finance MTP. All rights reserved.
         </p>
         <div className="flex items-center space-x-4">
-          <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+          <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
             Privacy Policy
           </Link>
-          <Link to="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">
+          <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">
             Terms of Service
           </Link>
         </div>

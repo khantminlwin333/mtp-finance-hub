@@ -196,7 +196,7 @@ const TermsOfServicePage = () => {
       icon: <Mail className="w-5 h-5" />,
       content: "For questions about these Terms, please contact us at:",
       contact: {
-        email: "legal@mtpfinancehub.com",
+        email: "servicemtp67@gmail.com",
         subject: "Terms of Service Inquiry"
       }
     }

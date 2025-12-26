@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Apple, AppWindow } from "lucide-react";
+import { Apple,Smartphone } from "lucide-react";
+import PlayStoreIcon from '../assets/apps.png';
 
 const HeroSection = () => {
   return (
@@ -9,20 +10,24 @@ const HeroSection = () => {
         <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-lg bg-muted overflow-hidden shadow-2xl animate-fade-in animation-delay-900">
           <iframe 
             className="w-full h-full"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            src="https://youtube.com/shorts/YfbhJxy6QRw?si=WGi_Q_xked3UEnRs"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowFullScreen>
           </iframe>
         </div>
         <div className="flex justify-center gap-4 mt-8 animate-fade-in animation-delay-1200">
-          <Button variant="outline" size="lg">
-            <AppWindow className="mr-2 h-6 w-6" />
-            Download for Android
-          </Button>
-          <Button variant="outline" size="lg">
+        <Button variant="outline" size="lg">
+  <img 
+        src={PlayStoreIcon} 
+        alt="Get it on Google Play"
+        className="h-12 w-auto"
+      />
+  Download for Android
+</Button>
+          <Button variant="outline" size="lg" disabled>
             <Apple className="mr-2 h-6 w-6" />
-            Download for iOS
+            We are currently working!
           </Button>
         </div>
       </div>

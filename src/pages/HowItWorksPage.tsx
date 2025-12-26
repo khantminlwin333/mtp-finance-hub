@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import PlayStoreIcon from "@/assets/apps.png";
 import { 
   UserPlus, 
   FileText, 
@@ -197,10 +198,8 @@ const HowItWorksPage = () => {
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" className="gap-2 flex-1" asChild>
-                    <a href="https://play.google.com/store/apps/details?id=com.mtp.financehub" target="_blank" rel="noopener noreferrer">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M3 20.5v-17c0-.55.45-1 1-1h16c.55 0 1 .45 1 1v17c0 .55-.45 1-1 1H4c-.55 0-1-.45-1-1zm5-2h10v-1H8v1zm0-4h10v-1H8v1zm0-4h10v-1H8v1z"/>
-                      </svg>
+                    <a href="https://play.google.com/store/apps/details?id=com.khantminlwin.MTP" target="_blank" rel="noopener noreferrer">
+                     <img src={PlayStoreIcon} />
                       Google Play
                     </a>
                   </Button>
