@@ -26,7 +26,7 @@ const HeroSection = () => {
   const youtubeShortsUrl = "https://www.youtube.com/embed/YfbhJxy6QRw";
 
   return (
-    <section className="relative h-screen flex items-center justify-center bg-background">
+    <section className="relative min-h-screen flex items-center justify-center bg-background py-20 md:py-0">
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-lg bg-muted overflow-hidden shadow-2xl animate-fade-in animation-delay-900">
@@ -40,20 +40,22 @@ const HeroSection = () => {
           ></iframe>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8 animate-fade-in animation-delay-1200">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in animation-delay-1200 px-4">
           {appStores.map((store, index) => (
             <Button
               key={store.name}
               variant={store.disabled ? "outline" : "default"}
               size="lg"
               disabled={store.disabled}
-              className="min-w-[200px]"
+              className="w-full sm:w-auto sm:min-w-[200px]"
             >
               {store.disabled ? (
                 // iOS button (disabled)
                 <>
-                  <Apple className="mr-2 h-6 w-6" />
-                  <span>We are currently working!</span>
+                  <Apple className="mr-2 h-5 w-5 sm:h-6 sm:w-6" />
+                  <span className="text-sm sm:text-base">
+                    We are currently working!
+                  </span>
                 </>
               ) : (
                 // Android button (enabled with download link)
@@ -66,11 +68,13 @@ const HeroSection = () => {
                   <img
                     src={PlayStoreIcon}
                     alt="Get it on Google Play"
-                    className="h-6 w-6"
+                    className="h-5 w-5 sm:h-6 sm:w-6"
                   />
                   <div className="flex flex-col items-start">
                     <span className="text-xs">{store.description}</span>
-                    <span className="font-bold">{store.platform}</span>
+                    <span className="font-bold text-sm sm:text-base">
+                      {store.platform}
+                    </span>
                   </div>
                 </a>
               )}

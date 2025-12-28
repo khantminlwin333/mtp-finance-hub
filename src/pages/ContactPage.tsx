@@ -45,7 +45,8 @@ const ContactPage = () => {
     console.log("Form data:", data);
     toast({
       title: "Message Sent!",
-      description: "We've received your message and will get back to you shortly.",
+      description:
+        "We've received your message and will get back to you shortly.",
     });
     form.reset();
   }
@@ -53,9 +54,11 @@ const ContactPage = () => {
   return (
     <main className="min-h-screen flex flex-col">
       <Navbar />
-      <div className="flex-grow container mx-auto px-4 py-20">
-        <h1 className="text-4xl font-bold text-center mb-10">Contact Us</h1>
-        <div className="max-w-xl mx-auto">
+      <div className="flex-grow container mx-auto px-4 py-16 sm:py-20 md:py-24">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-10">
+          Contact Us
+        </h1>
+        <div className="max-w-xl mx-auto w-full">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <FormField
@@ -101,7 +104,9 @@ const ContactPage = () => {
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full">Submit</Button>
+              <Button type="submit" className="w-full">
+                Submit
+              </Button>
             </form>
           </Form>
         </div>

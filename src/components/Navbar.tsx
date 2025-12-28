@@ -17,7 +17,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    {href: "/", label: "Home"},
+    { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/how-it-works", label: "How It Works" },
   ];
@@ -26,11 +26,14 @@ const Navbar = () => {
   const handleContactClick = () => {
     const email = "servicemtp67@gmail.com";
     const subject = "Contact Inquiry - MTP Finance Hub";
-    const body = "Hello MTP Finance Hub team,\n\nI would like to get in touch regarding:";
-    
+    const body =
+      "Hello MTP Finance Hub team,\n\nI would like to get in touch regarding:";
+
     // Open default email client
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
     // Close mobile menu if open
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
@@ -41,20 +44,22 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "glass py-3 shadow-soft"
-          : "bg-transparent py-5"
+          ? "glass py-2 md:py-3 shadow-soft"
+          : "bg-transparent py-3 md:py-5"
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-glow">
-            <img 
+          <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center shadow-glow">
+            <img
               src={mtpLogo}
-              alt="MTP Logo" 
-              className="w-10 h-10"
+              alt="MTP Logo"
+              className="w-8 h-8 md:w-10 md:h-10"
             />
           </div>
-          <span className="font-display font-bold text-xl text-foreground">MTP</span>
+          <span className="font-display font-bold text-lg md:text-xl text-foreground">
+            MTP
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -70,9 +75,9 @@ const Navbar = () => {
           ))}
         </div>
         <div className="hidden md:flex items-center gap-3">
-          <Button 
-            variant="accent" 
-            size="sm" 
+          <Button
+            variant="accent"
+            size="sm"
             onClick={handleContactClick}
             className="gap-2"
           >
@@ -93,23 +98,23 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden glass mt-2 mx-4 rounded-xl p-4 animate-fade-up">
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 py-2 text-sm font-medium"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-200 py-2.5 px-2 text-sm font-medium rounded-lg hover:bg-muted/50"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="flex flex-col gap-2 pt-3 border-t border-border">
-              <Button 
-                variant="accent" 
-                size="sm" 
+            <div className="flex flex-col gap-2 pt-2 mt-2 border-t border-border">
+              <Button
+                variant="accent"
+                size="sm"
                 onClick={handleContactClick}
-                className="gap-2"
+                className="gap-2 w-full"
               >
                 <Mail className="w-4 h-4" />
                 Contact Us
