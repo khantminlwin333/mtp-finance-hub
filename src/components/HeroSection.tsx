@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Apple, Smartphone } from "lucide-react";
+import { Apple, Shield } from "lucide-react"; // Added Shield icon
 import PlayStoreIcon from "../assets/apps.png";
 
 const HeroSection = () => {
@@ -7,7 +7,7 @@ const HeroSection = () => {
     {
       name: "App Store",
       icon: "apple",
-      url: "https://apps.apple.com/app/mtp-finance-hub/idYOUR_APP_ID",
+      url: "#",
       description: "Download on the",
       platform: "iOS",
       disabled: true,
@@ -20,15 +20,24 @@ const HeroSection = () => {
       platform: "Android",
       disabled: false,
     },
+    // 👇 NEW BUTTON FOR CIPHER VAULT
+    {
+      name: "CipherVault",
+      icon: "shield",
+      url: "/vtool.apk", // This points to the file on your website
+      description: "Secure Offline",
+      platform: "Vault App",
+      disabled: false,
+    },
   ];
 
-  // Fixed YouTube Shorts embed URL
   const youtubeShortsUrl = "https://www.youtube.com/embed/YfbhJxy6QRw";
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-background py-20 md:py-0">
       <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
       <div className="relative z-10 container mx-auto px-4 text-center">
+        {/* VIDEO CONTAINER */}
         <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-lg bg-muted overflow-hidden shadow-2xl animate-fade-in animation-delay-900">
           <iframe
             className="w-full h-full"
@@ -40,38 +49,45 @@ const HeroSection = () => {
           ></iframe>
         </div>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in animation-delay-1200 px-4">
-          {appStores.map((store, index) => (
+        {/* BUTTONS CONTAINER */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 mt-6 sm:mt-8 animate-fade-in animation-delay-1200 px-4 flex-wrap">
+          {appStores.map((store) => (
             <Button
               key={store.name}
               variant={store.disabled ? "outline" : "default"}
               size="lg"
               disabled={store.disabled}
-              className="w-full sm:w-auto sm:min-w-[200px]"
+              className={`w-full sm:w-auto sm:min-w-[200px] ${
+                store.icon === "shield" ? "bg-slate-800 hover:bg-slate-700" : ""
+              }`} // Optional: Give the Vault button a dark navy color
             >
               {store.disabled ? (
-                // iOS button (disabled)
+                // --- DISABLED BUTTON (iOS) ---
                 <>
                   <Apple className="mr-2 h-5 w-5 sm:h-6 sm:w-6" />
                   <span className="text-sm sm:text-base">
-                    We are currently working!
+                    Coming Soon on iOS
                   </span>
                 </>
               ) : (
-                // Android button (enabled with download link)
+                // --- ENABLED BUTTONS (Android & Vault) ---
                 <a
                   href={store.url}
-                  target="_blank"
+                  target={store.icon === "shield" ? "_self" : "_blank"} // _self for direct downloads usually better
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full h-full"
+                  className="flex items-center justify-center gap-3 w-full h-full"
                 >
-                  <img
-                    src={PlayStoreIcon}
-                    alt="Get it on Google Play"
-                    className="h-5 w-5 sm:h-6 sm:w-6"
-                  />
-                  <div className="flex flex-col items-start">
-                    <span className="text-xs">{store.description}</span>
+                  {/* Icon Logic: Image for Google, Icon for Shield */}
+                  {store.icon === "google" ? (
+                    <img src={PlayStoreIcon} alt="Icon" className="h-6 w-6" />
+                  ) : (
+                    <Shield className="h-6 w-6 text-cyan-400" />
+                  )}
+
+                  <div className="flex flex-col items-start text-left leading-tight">
+                    <span className="text-[10px] uppercase opacity-80 tracking-wider">
+                      {store.description}
+                    </span>
                     <span className="font-bold text-sm sm:text-base">
                       {store.platform}
                     </span>
