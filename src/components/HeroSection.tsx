@@ -22,11 +22,11 @@ const HeroSection = () => {
     },
     // 👇 NEW BUTTON FOR CIPHER VAULT
     {
-      name: "CipherVault",
+      name: "V-tool",
       icon: "shield",
       url: "/vtool.apk", // This points to the file on your website
       description: "Secure Offline",
-      platform: "Vault App",
+      platform: "V-tool App",
       disabled: false,
     },
   ];
