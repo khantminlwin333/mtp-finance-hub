@@ -32,7 +32,7 @@ const HeroSection = () => {
     {
       name: "AGENS",
       icon: "shield",
-      url: "/agens.apk", // This points to the file on your website
+      url: "/agens.apks",
       description: "Connect Workers and employees",
       platform: "AGENS App",
       disabled: false,
