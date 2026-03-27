@@ -29,6 +29,14 @@ const HeroSection = () => {
       platform: "V-tool App",
       disabled: false,
     },
+    {
+      name: "AGENS",
+      icon: "shield",
+      url: "/agens.apk", // This points to the file on your website
+      description: "Connect Workers and employees",
+      platform: "AGENS App",
+      disabled: false,
+    },
   ];
 
   const youtubeShortsUrl = "https://www.youtube.com/embed/YfbhJxy6QRw";
